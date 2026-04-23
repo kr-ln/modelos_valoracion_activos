@@ -65,3 +65,24 @@ Selección del mejor activo con base en:
 1. Clonar el repositorio:
 ```bash
 git clone https://github.com/kr-ln/proyecto-modelos_valoracion_activos.git
+
+---
+
+## Personalización
+
+El usuario puede adaptar el modelo fácilmente modificando:
+
+### Activos (tickers)
+Ubicados en el código principal:
+
+```python
+tickers = ['VIG','VTI','SCHD','JNJ','PG','KO','WMT']
+
+### Ponderaciones del modelo AHP
+También puedes ajustar las prioridades del modelo según tu perfil de riesgo modificando las ponderaciones:
+```python
+perfiles_brutos = {
+    "Conservador": {'Retorno': 3, 'Volatilidad': 6, 'Sharpe': 5},
+    "Moderado": {'Retorno': 4, 'Volatilidad': 3, 'Sharpe': 6},
+    "Agresivo": {'Retorno': 6, 'Volatilidad': 2, 'Sharpe': 4}
+}
